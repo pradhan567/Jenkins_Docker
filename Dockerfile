@@ -1,4 +1,4 @@
 FROM nginx
 MAINTAINER Manas
-expose 8088
+expose 80
 
