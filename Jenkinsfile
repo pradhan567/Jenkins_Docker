@@ -12,6 +12,7 @@ pipeline {
 		   sh "docker build -t nginx_jenkins ."
 		   }
 		}
+           }
     stage ('Docker Login') {
 	    steps {
 		  withCredentials([string(credentialsId: 'Docker_Hub_Pwd', variable: 'Docker_Hub_Pwd')]) {
