@@ -21,7 +21,7 @@ pipeline {
 		}
      stage ('Run docker image') {
 	    steps {
-		   sh "docker run -d -p 8080:8080 --name=nginx nginx_jenkins"
+		   sh "docker run -d -p 8080:8090 --name=nginx nginx_jenkins"
 		   }
 		}
 	}
