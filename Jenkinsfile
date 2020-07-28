@@ -15,11 +15,10 @@ pipeline {
       
     stage ('Docker Login') {
 	    steps {
-		  withCredentials([string(credentialsId: 'Docker_Hub_Pwd', variable: 'Docker_Hub_Pwd')]) {
-          sh "docker login -u mprad -p ${Docker_Hub_Pwd}"
+		 // withCredentials([string(credentialsId: 'Docker_Hub_Pwd', variable: 'Docker_Hub_Pwd')]) {
+          sh "docker login -u mprad -p Vicky1994@."
 		   }
 		}
-    }
      stage ('Run docker image') {
 	    steps {
 		   sh "docker run -d -p 8080:8080 --name=nginx nginx_jenkins"
