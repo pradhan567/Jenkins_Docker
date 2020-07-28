@@ -1,3 +1,5 @@
-FROM nginx/nginx
+FROM nginx
 MAINTAINER Manas
-COPY /home/html  /usr/share/nginx/html
+expose 80
+COPY html /usr/share/nginx/html
+
