@@ -22,7 +22,7 @@ pipeline {
      stage ('Run docker image') {
 	    steps {
 		    sh "docker rm -f nginx"
-		    sh "docker run -d -p 8080:8090 --name=nginx nginx_jenkins"
+		    sh "docker run -d -p 8088:8090 --name=nginx nginx_jenkins"
 		   }
 		}
 	}
