@@ -15,9 +15,10 @@ pipeline {
       
     stage ('Docker Login') {
 	    steps {
-		 // withCredentials([string(credentialsId: 'Docker_Hub_Pwd', variable: 'Docker_Hub_Pwd')]) {
-          sh "docker login -u mprad -p Vicky1994@."
-		   }
+		withCredentials([usernamePassword(credentialsId: 'Docker-usr-pass', passwordVariable: 'Docker-pass', usernameVariable: 'Docker-usr')]) {
+			sh "docker login -u ${Docker-usr} -p ${Docker-pass}"
+                           }         
+		    }
 		}
      stage ('Run docker image') {
 	    steps {
