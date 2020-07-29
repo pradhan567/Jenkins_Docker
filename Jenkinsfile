@@ -18,7 +18,8 @@ pipeline {
 		withCredentials([string(credentialsId: 'Docker_Hub_Pwd', variable: 'docker_hub_pass')]) {
 
 			sh "docker login -u mprad -p ${docker_hub_pass}"
-                           }         
+                           } 
+		    
 		    }
 		}
      stage ('Run docker image') {
