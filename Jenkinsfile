@@ -17,7 +17,7 @@ pipeline {
 	    steps {
 		withCredentials([string(credentialsId: 'Docker_Hub_Pwd', variable: 'docker_hub_pass')]) {
 
-			sh "docker login -u mprad -p ${Docker_Hub_Pwd}"
+			sh "docker login -u mprad -p ${docker_hub_pass}"
                            }         
 		    }
 		}
